@@ -1,5 +1,3 @@
-// counter-app/r/counter/counter.gno
-
 package bridge 
 
 import (

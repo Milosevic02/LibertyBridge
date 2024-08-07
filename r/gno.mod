@@ -1,1 +1,1 @@
-module gno.land/r/amci/v1/bridge
+module gno.land/r/g15mzjefvj9pt2ctv30l9ju03rewmfv9hken9wfm/v1/bridge
