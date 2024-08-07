@@ -7,6 +7,8 @@ import {
 
 async function main() {
   const [deployer] = await ethers.getSigners();
+console.log(deployer)
+
   console.log(
     `ℹ️  Attempting to deploy the Bridge smart contract to the ${hre.network.name} blockchain using ${deployer.address} address`
   );

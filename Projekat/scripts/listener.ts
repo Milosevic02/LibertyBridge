@@ -178,9 +178,7 @@ async function main() {
 
   const gnoProvider = new GnoJSONRPCProvider(test4RPC);
 
-  const mnemonic =
-    'upgrade disagree dilemma diagram tunnel connect glue finger insane heavy vintage stadium tuition pizza embark budget circle shop buddy joke walk intact soon illegal';
-  // address derived from mnemonic: g1thgp4e56dw9fjkt9643luwk88zqwkeg5f2gjvm
+  const mnemonic = process.env.MNEMONIC;  // address derived from mnemonic: g1thgp4e56dw9fjkt9643luwk88zqwkeg5f2gjvm
 
   const wallet = await GnoWallet.fromMnemonic(mnemonic);
   wallet.connect(gnoProvider);
