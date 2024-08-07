@@ -1,0 +1,1 @@
+module gno.land/r/amci/v1/bridge
