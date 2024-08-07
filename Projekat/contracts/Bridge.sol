@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract Bridge {
     address public token;
-    event Deposit(address indexed by, uint256 amount, address gno_address);
+    event Deposit(address indexed by, uint256 amount, string gno_address);
 
     uint public index;
     mapping(address => uint256) public deposits;
@@ -15,7 +15,7 @@ contract Bridge {
         token = _token;
     }
 
-    function deposit(address gno_addr) payable public {
+    function deposit(string memory gno_addr) payable public {
 
         require(msg.value > 0, "Deposit amount must be greater than zero");
         deposits[msg.sender] = deposits[msg.sender] + msg.value;
