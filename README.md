@@ -82,6 +82,16 @@ If you have deployed your own GnoLand contract, replace the address in the follo
 gnokey query bank/balances/g12x53uevj3plq8fpntp59nr7dvwu3a0gzw74n9f --remote https://rpc.test4.gno.land:443
 ```
 
+## Future Plans
+
+We are planning to enhance the project with the following features:
+
+- **Security Improvements**: Enhancing the overall security of the bridge to ensure safe and reliable transactions.
+- **Development of a Custom Banker and EGRC20 Token**: Increasing The Max Amount Of Tokens and Creating A Custom Token For Compatibility.
+- **Bi-Directional Bridge**: Expanding the bridge to support transactions from GnoLand to Ethereum, enabling seamless two-way transfers.
+- **Fee Implementation**: Introducing transaction fees to cover operational costs and ensure the sustainability of the bridge.
+- **Additional Features**: Exploring and implementing other features to improve the functionality and usability of the bridge.
+
 ## Authors
 
 This project was developed by:
