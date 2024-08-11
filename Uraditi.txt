@@ -1,0 +1,17 @@
+abi srediti
+komentare srediti
+namestiti putanju do contracta za deploy
+readme napisati:
+	Backend:
+		-Deploj kontrakt
+		-ENV fajl
+		-npm install
+		-npm instal dotenv
+		-npm install hardhat
+		-npx hardhat run .\scripts\listener.ts --network sepolia
+	Frontend:
+		-npm install
+		-npm run dev
+	Contracts:
+		-2 deploy contracts
+		-gnokey query bank/balances/g12x53uevj3plq8fpntp59nr7dvwu3a0gzw74n9f --remote https://rpc.test4.gno.land:443
