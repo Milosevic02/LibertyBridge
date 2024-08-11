@@ -2,6 +2,8 @@
 
 This project was developed during a Web3 camp with the goal of creating a bridge between the Ethereum and GnoLand networks, enabling the transfer of assets between these two blockchain networks.
 
+**Link to the presentation:** [Google Slides Presentation](https://docs.google.com/presentation/d/1EOhX7evzmfzrT6Zbcnvr3jNX9tTJ98E6Bl-bggafD9Y/edit#slide=id.g115b257f0b0_1_15)
+
 ## Backend Setup
 
 ### 1. Deploy the ETH Contract
@@ -104,8 +106,3 @@ This project was developed by:
 
 - **Amar Mujezinović**  
   [GitHub](https://github.com/amaramci) | [LinkedIn](https://www.linkedin.com/in/amar-mujezinovic/)
-
-With great support and mentorship from:
-
-- **Lav Leon Hudak**  
-  [GitHub](https://github.com/leohhhn) | [LinkedIn](https://www.linkedin.com/in/leon-hudak/)
