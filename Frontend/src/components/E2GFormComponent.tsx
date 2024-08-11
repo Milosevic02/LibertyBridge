@@ -71,7 +71,7 @@ const E2GFormComponent: React.FC = () => {
     
       try {
         await writeContract({
-          address: '0xC73001b326CF8ffF22497928Fe95d565b3465649',
+          address: '0x6F677442B0cb3E80B39090661a427cf1b1fA0c46',
           abi,
           functionName: 'deposit',
           args: [to],

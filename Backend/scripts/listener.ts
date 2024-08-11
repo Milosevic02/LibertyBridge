@@ -203,15 +203,18 @@ async function main() {
     amount: ethers.BigNumberish,
     gno_address: string
   ) => {
+
+    //Ubaci cekanje blokova 32 je sigurno 64 sigurnije
     console.log(`Deposit event detected:`);
     console.log(`By: ${by}`);
-    console.log(`Amount: ${ethers.formatUnits(amount, 18)}`);
+    console.log(`Amount:${ethers.formatUnits(amount, 18)}`);
     console.log(`GNO Address: ${gno_address}`);
-    amount = ethers.formatUnits(amount, 18);
+    const formattedAmount = amount.toString();
+
     const tx = await wallet.callMethod(
       'gno.land/r/g15mzjefvj9pt2ctv30l9ju03rewmfv9hken9wfm/v2/bridge',
       'Mint',
-      ['100', gno_address],
+      [formattedAmount, gno_address],
       TransactionEndpoint.BROADCAST_TX_COMMIT,
       undefined,
       fee

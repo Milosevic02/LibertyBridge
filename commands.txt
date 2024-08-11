@@ -1,9 +1,0 @@
-deploy
-gnokey maketx addpkg --pkgpath "gno.land/r/g15mzjefvj9pt2ctv30l9ju03rewmfv9hken9wfm/v2/bridge" --pkgdir ./r  --gas-fee 10000000ugnot --gas-wanted 8000000 --broadcast  --remote https://rpc.test4.gno.land:443 --chainid test4 nemanja
-
-gnokey maketx call --pkgpath "gno.land/r/amci/contract" --func "Deposit" --args 2 --args "g1v0d2952ae7w6tghmluxuddgvvkv9ajn5xdvfnw" --args "g1gzawhexghw4nfajdzghw2ksx60ppd7juw334sr" --gas-fee 10000000ugnot --gas-wanted 800000 --broadcast  --remote localhost:26657 mykey
-
-
-
-
-gnokey maketx call, addpkg
