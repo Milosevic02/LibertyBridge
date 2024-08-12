@@ -9,164 +9,10 @@ import {
   GnoWSProvider,
 } from '@gnolang/gno-js-client';
 import { TransactionEndpoint } from '@gnolang/tm2-js-client/bin/provider/endpoints';
+import { BRIDGE_ABI } from '../abi'; // Import the ABI
 
 const test4RPC = 'https://rpc.test4.gno.land:443';
 const localRPC = 'http://127.0.0.1:26657';
-
-
-const BRIDGE_ABI = [
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_token",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "by",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "gno_address",
-        "type": "string"
-      }
-    ],
-    "name": "Deposit",
-    "type": "event"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "gno_addr",
-        "type": "string"
-      }
-    ],
-    "name": "deposit",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "deposits",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_addr",
-        "type": "address"
-      }
-    ],
-    "name": "getDeposit",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "index",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_to",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "release",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_str",
-        "type": "string"
-      }
-    ],
-    "name": "stringToAddress",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "pure",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "token",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  }
-]
-
 
 async function main() {
   const provider = new ethers.JsonRpcProvider(process.env.SEPOLIA_URL);
@@ -178,9 +24,7 @@ async function main() {
 
   const gnoProvider = new GnoJSONRPCProvider(test4RPC);
 
-  const mnemonic =
-    'upgrade disagree dilemma diagram tunnel connect glue finger insane heavy vintage stadium tuition pizza embark budget circle shop buddy joke walk intact soon illegal';
-  // address derived from mnemonic: g1thgp4e56dw9fjkt9643luwk88zqwkeg5f2gjvm
+  const mnemonic = process.env.MNEMONIC;  // address derived from mnemonic: g1thgp4e56dw9fjkt9643luwk88zqwkeg5f2gjvm
 
   const wallet = await GnoWallet.fromMnemonic(mnemonic);
   wallet.connect(gnoProvider);
