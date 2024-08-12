@@ -107,14 +107,10 @@ We are planning to enhance the project with the following features:
 This project was developed by:
 
 - **Dragan Milošević**  
-  [GitHub](https://github.com/Milosevic02) | [LinkedIn](https://www.linkedin.com/in/dragan-milosevic-ab405b280/)
+  [GitHub](https://github.com/Milosevic02) | [LinkedIn](https://www.linkedin.com/in/dragan-milosevic3/)
 
 - **Nemanja Matić**  
   [GitHub](https://github.com/Nemanya8) | [LinkedIn](https://www.linkedin.com/in/nemanjamatic/)
 
 - **Amar Mujezinović**  
   [GitHub](https://github.com/amaramci) | [LinkedIn](https://www.linkedin.com/in/amar-mujezinovic/)
-
----
-
-Da li je ovo u skladu sa tvojim potrebama?
