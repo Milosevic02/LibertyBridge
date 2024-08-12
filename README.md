@@ -6,7 +6,43 @@ This project was developed during a Web3 camp with the goal of creating a bridge
 
 ## Backend Setup
 
-### 1. Deploy the ETH Contract
+You can use our pre-deployed smart contract on the Ethereum network with the address `0x6F677442B0cb3E80B39090661a427cf1b1fA0c46` for testing. If you prefer to deploy your own contract, follow the steps below:
+
+### 1. Configure the `.env` File
+
+Create a `.env` file in the root directory and set up your environment variables. You can use our example configuration from the `.env.example` file, or if you prefer, you can use our Ethereum smart contract mentioned above.
+
+### 2. Install Node.js Packages
+
+Install the required Node.js packages:
+
+```bash
+npm install
+```
+
+### 3. Install dotenv
+
+`dotenv` allows you to manage environment variables from the `.env` file:
+
+```bash
+npm install dotenv
+```
+
+### 4. Install Hardhat
+
+Install Hardhat, a development environment for Ethereum:
+
+```bash
+npm install hardhat
+```
+
+### **Note:** If you are using our pre-deployed Ethereum smart contract for testing, you can skip steps 5 and 6 below.
+
+### 5. Copy the `Bridge.sol` File (if deploying a new contract)
+
+If you are deploying your own contract, create a folder named `contracts` within the `backend` directory and copy the `Bridge.sol` file into this folder.
+
+### 6. Deploy the ETH Contract
 
 To deploy your own Ethereum smart contract, use the following command:
 
@@ -16,35 +52,7 @@ npx hardhat run scripts/deploy.ts --network sepolia
 
 This will deploy a new smart contract on the Sepolia network. If you prefer not to deploy your own contract, you can use our pre-deployed smart contract on the Ethereum network with the address `0x6F677442B0cb3E80B39090661a427cf1b1fA0c46` for testing.
 
-### 2. Configure the `.env` File
-
-Create a `.env` file in the root directory and set up your environment variables. You can use our example configuration from the `.env.example` file, or if you prefer, you can use our Ethereum smart contract mentioned above.
-
-### 3. Install Node.js Packages
-
-Install the required Node.js packages:
-
-```bash
-npm install
-```
-
-### 4. Install dotenv
-
-`dotenv` allows you to manage environment variables from the `.env` file:
-
-```bash
-npm install dotenv
-```
-
-### 5. Install Hardhat
-
-Install Hardhat, a development environment for Ethereum:
-
-```bash
-npm install hardhat
-```
-
-### 6. Run the Listener Script
+### 7. Run the Listener Script
 
 Run the listener script on the Sepolia test network:
 
@@ -89,7 +97,7 @@ gnokey query bank/balances/g12x53uevj3plq8fpntp59nr7dvwu3a0gzw74n9f --remote htt
 We are planning to enhance the project with the following features:
 
 - **Security Improvements**: Enhancing the overall security of the bridge to ensure safe and reliable transactions.
-- **Development of a Custom Banker and EGRC20 Token**: Increasing The Max Amount Of Tokens and Creating A Custom Token For Compatibility.
+- **Development of a Custom Banker and EGRC20 Token**: Increasing the max amount of tokens and creating a custom token for compatibility.
 - **Bi-Directional Bridge**: Expanding the bridge to support transactions from GnoLand to Ethereum, enabling seamless two-way transfers.
 - **Fee Implementation**: Introducing transaction fees to cover operational costs and ensure the sustainability of the bridge.
 - **Additional Features**: Exploring and implementing other features to improve the functionality and usability of the bridge.
@@ -106,3 +114,7 @@ This project was developed by:
 
 - **Amar Mujezinović**  
   [GitHub](https://github.com/amaramci) | [LinkedIn](https://www.linkedin.com/in/amar-mujezinovic/)
+
+---
+
+Da li je ovo u skladu sa tvojim potrebama?
