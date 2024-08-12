@@ -1,9 +1,5 @@
 pragma solidity ^0.8.20;
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-
-//Dodaj da jedino owner moze da poziva release
-
 contract Bridge {
     address public token;
     event Deposit(address indexed by, uint256 amount, string gno_address);
@@ -27,11 +23,5 @@ contract Bridge {
     }
 
 
-    function release(address _to, uint256 _amount) public {
-        require(deposits[_to] >= _amount, "Insufficient balance");
-        deposits[msg.sender] = deposits[msg.sender] - _amount;
 
-        IERC20(token).transfer(_to, _amount);
-
-    }
 }
