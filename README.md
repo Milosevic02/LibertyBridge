@@ -1,8 +1,35 @@
 # Bridge Between Ethereum and GnoLand Networks
+![Liberty Bridge](lb_banner.png)
 
 This project was developed during a Web3 camp with the goal of creating a bridge between the Ethereum and GnoLand networks, enabling the transfer of assets between these two blockchain networks.
 
-**Link to the presentation:** [Google Slides Presentation](https://docs.google.com/presentation/d/1EOhX7evzmfzrT6Zbcnvr3jNX9tTJ98E6Bl-bggafD9Y/edit#slide=id.g115b257f0b0_1_15)
+## Project overview
+
+The Liberty Bridge is a centralized blockchain bridge that facilitates the transfer of cryptocurrency between the Ethereum (Sepolia) and gno.land networks. The process begins when a user connects their MetaMask wallet to our frontend interface. They then select the type of cryptocurrency they wish to transfer, specify the amount, and provide their address on the destination network before submitting the transaction.
+
+Upon submission, our system invokes the MetaMask API, which transmits the transaction details to our smart contract. The smart contract then executes the transaction and emits an event. Our backend is configured to listen for these events, and upon detection, it processes the information. Using the gno.js library, our backend connects to our wallet on the gno.land network. The system then initiates a call to the Mint function within our Realm, minting new GETH tokens and sending them to the specified address on the gno.land network.
+
+![Liberty Bridge Architecture](lb_arch.png)
+
+## Future Plans
+
+**Security and Reliability Enhancements:**  
+We are committed to bolstering the security of our bridge to ensure safe, reliable transactions, eliminating potential exploits and system vulnerabilities.
+
+**Development of Custom Banker and EGRC20 Token:**  
+We are designing a custom banker that supports `uint256`, replacing the current `int64`, to align with Ethereum standards and enhance flexibility. Additionally, we will develop an EGRC20 token with `uint256` support, enabling the handling of larger token amounts and offering improved functionality.
+
+**Bi-Directional Bridge Expansion:**  
+We plan to extend the bridge's capabilities to support transactions from gno.land to Ethereum, facilitating seamless, two-way transfers between these platforms.
+
+**Transaction Fee Implementation:**  
+To ensure the sustainability of our bridge, we will introduce transaction fees. These fees will be set at a fair and competitive rate, balancing user satisfaction with operational viability.
+
+**Enhanced User Experience:**  
+We are dedicated to developing a user interface that is both intuitive and elegant. Our goal is to create a simple, easy-to-navigate frontend that ensures a seamless experience for all users.
+
+**Additional Feature Development:**  
+We will continuously explore and implement new features aimed at improving the functionality and overall usability of the bridge.
 
 ## Backend Setup
 
@@ -91,24 +118,6 @@ If you have deployed your own GnoLand contract, replace the address in the follo
 ```bash
 gnokey query bank/balances/g12x53uevj3plq8fpntp59nr7dvwu3a0gzw74n9f --remote https://rpc.test4.gno.land:443
 ```
-
-## Future Plans
-
-We are planning to enhance the project with the following features:
-
-- **Security Improvements**: Enhancing the overall security of the bridge to ensure safe and reliable transactions.
-- **Development of a Custom Banker and EGRC20 Token**: We aim to create a custom banker that supports `uint256` for increased flexibility and compatibility with different token standards. Additionally, we will be developing an EGRC20 token with support for `uint256` to handle larger token amounts and provide improved functionality.
-- **Bi-Directional Bridge**: Expanding the bridge to support transactions from GnoLand to Ethereum, enabling seamless two-way transfers between these platforms.
-- **Fee Implementation**: Introducing transaction fees to cover operational costs and ensure the sustainability of the bridge.
-- **Additional Features**: Exploring and implementing other features to improve the functionality and usability of the bridge.
-
-## Challenges
-
-1. **Integration with `uint256`**: Adapting the current system to work with `uint256` presents challenges, particularly in modifying the custom banker and token to handle this data type effectively.
-2. **Security Risks**: Enhancing security while adding new features and functionalities requires careful planning to mitigate potential vulnerabilities and ensure safe transactions.
-3. **Cross-Chain Compatibility**: Ensuring seamless bi-directional transfers between GnoLand and Ethereum involves addressing compatibility issues and maintaining consistent functionality across different blockchain platforms.
-4. **Fee Structure**: Developing a fair and sustainable fee structure that covers operational costs without discouraging usage can be complex and needs careful consideration.
-5. **Custom Token Development**: Creating a new EGRC20 token with `uint256` support involves additional development and testing to ensure compatibility and stability.
 
 ## Authors
 
